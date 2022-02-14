@@ -1,62 +1,64 @@
 {
-  "description": "useful button 4 and 5 in safari",
-  "manipulators": [
+  "title": "Mouse button 4 and 5 to backward and forward in Safari Finder and Commander One",
+  "rules": [
     {
-      "conditions": [
+      "description": "Mouse button 4 and 5 to backward and forward in Safari Finder and Commander One",
+      "manipulators": [
         {
-          "bundle_identifiers": [
-            "com.apple.Safari"
+          "conditions": [
+            {
+              "bundle_identifiers": [
+                "com.apple.Safari",
+                "com.apple.finder",
+                "com.eltima.cmd1.mas"
+              ],
+              "type": "frontmost_application_if"
+            }
           ],
-          "type": "frontmost_application_if"
-        }
-      ],
-      "from": {
-        "modifiers": {
-          "optional": [
-            "caps_lock"
-          ]
+          "from": {
+            "modifiers": {
+              "optional": ["caps_lock"]
+            },
+            "pointing_button": "button5"
+          },
+          "to": [
+            {
+              "key_code": "close_bracket",
+              "lazy": false,
+              "modifiers": ["right_gui"],
+              "repeat": true
+            }
+          ],
+          "type": "basic"
         },
-        "pointing_button": "button5"
-      },
-      "to": [
         {
-          "key_code": "close_bracket",
-          "lazy": false,
-          "modifiers": [
-            "right_gui"
+          "conditions": [
+            {
+              "bundle_identifiers": [
+                "com.apple.Safari",
+                "com.apple.finder",
+                "com.eltima.cmd1.mas"
+              ],
+              "type": "frontmost_application_if"
+            }
           ],
-          "repeat": true
-        }
-      ],
-      "type": "basic"
-    },
-    {
-      "conditions": [
-        {
-          "bundle_identifiers": [
-            "com.apple.Safari"
+          "from": {
+            "modifiers": {
+              "optional": ["caps_lock"]
+            },
+            "pointing_button": "button4"
+          },
+          "to": [
+            {
+              "key_code": "open_bracket",
+              "lazy": false,
+              "modifiers": ["right_gui"],
+              "repeat": true
+            }
           ],
-          "type": "frontmost_application_if"
+          "type": "basic"
         }
-      ],
-      "from": {
-        "modifiers": {
-          "optional": [
-            "caps_lock"
-          ]
-        },
-        "pointing_button": "button4"
-      },
-      "to": [
-        {
-          "key_code": "open_bracket",
-          "modifiers": [
-            "right_gui"
-          ],
-          "repeat": true
-        }
-      ],
-      "type": "basic"
+      ]
     }
   ]
 }
